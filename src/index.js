@@ -6,7 +6,6 @@ import Text from './components/Text';
 import Navigate from './components/Navigate';
 import Image from './components/Image';
 import ImgText from './components/ImgText';
-import RichCode from './pages/RichCode';
 import TextImage from './components/TextImage';
 
 const config = {
@@ -17,7 +16,6 @@ const config = {
     'my-spa:components/Image': Image,
     'my-spa:components/Img': ImgText,
     'my-spa:components/TextImage': TextImage,
-    // 'my-spa:pages/richCode': RichCode,
   },
 };
 
