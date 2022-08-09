@@ -5,7 +5,7 @@ const Home = (props) => {
     const {title, main} = props;
 
   return (
-    <div >
+    <div>
         <h1>{title}</h1>
         {main && <EditableArea content={main} />}
     </div>

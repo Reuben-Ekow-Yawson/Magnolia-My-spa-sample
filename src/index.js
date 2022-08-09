@@ -6,6 +6,8 @@ import Text from './components/Text';
 import Navigate from './components/Navigate';
 import Image from './components/Image';
 import ImgText from './components/ImgText';
+import RichCode from './pages/RichCode';
+import TextImage from './components/TextImage';
 
 const config = {
   componentMappings: {
@@ -14,6 +16,8 @@ const config = {
     'my-spa:components/Navigate': Navigate,
     'my-spa:components/Image': Image,
     'my-spa:components/Img': ImgText,
+    'my-spa:components/TextImage': TextImage,
+    // 'my-spa:pages/richCode': RichCode,
   },
 };
 
@@ -26,17 +30,16 @@ class App extends React.Component {
 
 
     const languages = ['en', 'de']
-    const rootNodeName = 'Home'
+    let rootNodeName = 'Home1'
     const pathname = window.location.pathname;
 
     let currentLanguage = languages[0];
 
-    languages.some(function (language) {
+    languages.some( (language) =>{
       if (new RegExp('/' + language + '($|/)').test(pathname)) {
         currentLanguage = language;
-
-        return true;
       }
+      return true
     });
 
     let nodePath = '/' + rootNodeName + pathname.replace(new RegExp('(.*' + rootNodeName + '|.html|/$)', 'g'), '');
@@ -52,9 +55,12 @@ class App extends React.Component {
       );
 
       templateAnnotations = await templateAnnotationsRes.json();
+      console.log(templateAnnotations);
     }
 
     this.setState({ page, templateAnnotations });
+
+    console.log(page);
   }
 
   render() {

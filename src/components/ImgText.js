@@ -1,9 +1,11 @@
 import React from 'react'
 
-const ImgText = ({image1}) => {
+const ImgText = ({image, text, text1}) => {
   return (
     <div>
-      {image1}
+      {/* <img src={`http://localhost:8080/${image["@link"]}`} class="img-fluid" alt="" /> */}
+      {text}
+      {text1}
     </div>
   )
 }
